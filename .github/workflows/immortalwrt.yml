@@ -27,7 +27,7 @@ env:
   DIY_P2_SH: scripts/diy-part2.sh
   ENV_SH: scripts/environment.sh
   FREE_DISK_SH: scripts/free_disk_space.sh
-  PATCHES_DIR: patches6.1
+  PATCHES_DIR: patches
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
