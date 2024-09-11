@@ -180,7 +180,7 @@ jobs:
         delete_tag_pattern: Immortalwrt
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-		
+
     - name: send telegram message on push
       uses: appleboy/telegram-action@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
