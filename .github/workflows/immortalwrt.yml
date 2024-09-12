@@ -184,7 +184,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: send telegram message on push
-      uses: appleboy/telegram-action@master
+      uses: cbrgm/telegram-github-action@v1
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         to: ${{ secrets.TELEGRAM_TO }}
