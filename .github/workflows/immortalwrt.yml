@@ -189,7 +189,6 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }} 
-        format: markdown
         message: |
             *#${{env.RUN_NUMBER}}号)相对高大全顺利编译完成了*
             [仓库：${{ github.repository }}](https://github.com/${{ github.repository }}/)
