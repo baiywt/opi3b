@@ -19,7 +19,7 @@ on:
     - cron: '0 4 1 * *'
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_URL: https://github.com/baiywt/immortalwrt
   REPO_BRANCH: openwrt-23.05
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: immortalwrt.config
@@ -182,16 +182,3 @@ jobs:
         delete_tag_pattern: Immortalwrt
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Telegram Notify
-      uses: appleboy/telegram-action@master
-      if: steps.organize.outputs.status == 'success' && !cancelled()
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }} 
-        format: markdown
-        message: |
-            *#${{env.RUN_NUMBER}}号)相对高大全顺利编译完成了*
-            [仓库：${{ github.repository }}](https://github.com/${{ github.repository }}/)
-            
-            [下载地址: ${{ steps.tag.outputs.release_tag }}](https://github.com/${{ github.repository }}/releases/tag/${{ steps.tag.outputs.release_tag }}) 
